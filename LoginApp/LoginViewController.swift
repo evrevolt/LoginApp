@@ -23,13 +23,24 @@ class LoginViewController: UIViewController {
 
     
     @IBAction func loginButtonTapped() {
+        //Проверка имени
+        guard userNameTextField.text == "Eugenya" else {
+            showAlert(with: "Неверно!", and: "Неверное имя или пароль")
+            passwordTextField.text = ""
+            return
+        }
+        
+        //Проверка пароля
+        guard passwordTextField.text == "1111" else {
+            showAlert(with: "Неверно!", and: "Неверное имя или пароль")
+            passwordTextField.text = ""
+            return
+        }
     }
-    
     
     @IBAction func forgotUserNameBtnTapped() {
         showAlert(with: "Подскажу Ваше имя \u{1F60F}", and: "Вас зовут - Eugenya")
     }
-    
 
     @IBAction func forgotPasswordBtnTapped() {
         showAlert(with: "Ох уж эти пароли \u{1F605}", and: "Ваш пароль - 1111")
