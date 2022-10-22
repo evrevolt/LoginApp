@@ -13,14 +13,14 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.welcomeName = "Welcome, \(userNameTextField.text ?? "unknown user")"
+    }
     
     @IBAction func loginButtonTapped() {
         //Проверка имени
@@ -46,7 +46,11 @@ class LoginViewController: UIViewController {
         showAlert(with: "Ох уж эти пароли \u{1F605}", and: "Ваш пароль - 1111")
     }
     
-
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let welcomeVC = segue.source as? WelcomeViewController else { return }
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
     
 }
 
