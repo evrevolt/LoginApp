@@ -22,6 +22,14 @@ class LoginViewController: UIViewController {
         welcomeVC.welcomeName = "Welcome, \(userNameTextField.text ?? "unknown user")"
     }
     
+    // Метод для скрытия клавиатуры тапом по экрану
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
+        //Это у меня не работает, не знаю почему. Именно она была дана в ДЗ. 
+        //super.touchesBegan(touches, with: event)
+    }
+    
     @IBAction func loginButtonTapped() {
         //Проверка имени
         guard userNameTextField.text == "Eugenya" else {
@@ -47,11 +55,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard let welcomeVC = segue.source as? WelcomeViewController else { return }
+        guard let _ = segue.source as? WelcomeViewController else { return }
         userNameTextField.text = ""
         passwordTextField.text = ""
     }
-    
 }
 
 // MARK: - UIAlertController
