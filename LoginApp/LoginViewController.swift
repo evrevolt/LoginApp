@@ -7,39 +7,35 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    private let user = "User"
+    private let password = "Password"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    //Передача данных по seque
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcomeName = "Welcome, \(userNameTextField.text ?? "unknown user")"
+        welcomeVC.welcomeName = user
     }
     
     // Метод для скрытия клавиатуры тапом по экрану
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        
-        //Это у меня не работает, не знаю почему. Именно она была дана в ДЗ. 
-        //super.touchesBegan(touches, with: event)
+        super.touchesBegan(touches, with: event)
     }
     
     @IBAction func loginButtonTapped() {
-        //Проверка имени
-        guard userNameTextField.text == "Eugenya" else {
-            showAlert(with: "Неверно!", and: "Неверное имя или пароль")
-            passwordTextField.text = ""
-            return
-        }
-        
-        //Проверка пароля
-        guard passwordTextField.text == "1111" else {
+        //Проверка имени и пароля
+        guard userNameTextField.text == user,
+        passwordTextField.text == password else {
             showAlert(with: "Неверно!", and: "Неверное имя или пароль")
             passwordTextField.text = ""
             return
@@ -47,11 +43,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameBtnTapped() {
-        showAlert(with: "Подскажу Ваше имя \u{1F60F}", and: "Вас зовут - Eugenya")
+        showAlert(with: "Подскажу Ваше имя \u{1F60F}", and: "Вас зовут - \(user)")
     }
 
     @IBAction func forgotPasswordBtnTapped() {
-        showAlert(with: "Ох уж эти пароли \u{1F605}", and: "Ваш пароль - 1111")
+        showAlert(with: "Ох уж эти пароли \u{1F605}", and: "Ваш пароль - \(password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {

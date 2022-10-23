@@ -38,7 +38,6 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuM-a2-jEg"/>
                                     <segue destination="TsY-u4-qrr" kind="show" id="NRJ-Ul-ogo"/>
                                 </connections>
                             </button>
@@ -90,9 +89,9 @@
         <!--Welcome View Controller-->
         <scene sceneID="Y50-2c-5OJ">
             <objects>
-                <viewController id="TsY-u4-qrr" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="TsY-u4-qrr" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UeL-5v-Yf1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9J-Es-3tI">
@@ -102,14 +101,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCw-R3-VLh">
-                                <rect key="frame" x="102.5" y="250" width="115" height="48"/>
+                                <rect key="frame" x="102.5" y="260" width="115" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log out">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logOutButtonTapped" destination="TsY-u4-qrr" eventType="touchUpInside" id="ujF-Gn-VCF"/>
-                                    <segue destination="bQP-4i-gaA" kind="unwind" unwindAction="unwindFor:" id="uYi-3o-8CN"/>
+                                    <segue destination="bQP-4i-gaA" kind="unwind" unwindAction="unwindFor:" id="nkv-j9-EPM"/>
                                 </connections>
                             </button>
                         </subviews>
