@@ -13,8 +13,8 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let user = "User"
-    private let password = "Password"
+    private let user = someUser.login
+    private let password = someUser.password
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +22,24 @@ final class LoginViewController: UIViewController {
     
     //Передача данных по seque
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcomeName = user
+//        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+//        welcomeVC.welcomeName = user
+        
+        
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        viewControllers.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.view.backgroundColor = .yellow
+                welcomeVC.welcomeName = user
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let firstInNabigationVC = navigationVC.topViewController else { return }
+                firstInNabigationVC.view.backgroundColor = .red
+            }
+        }
+        
+        
     }
     
     // Метод для скрытия клавиатуры тапом по экрану

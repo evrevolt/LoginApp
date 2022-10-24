@@ -134,7 +134,7 @@
         <!--Познакомимся?-->
         <scene sceneID="d2p-lt-RUZ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BhG-sB-P88" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BhG-sB-P88" customClass="InfoViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tg6-CG-iCx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="1712" y="940"/>
         </scene>
-        <!--Обо мне-->
+        <!--Мое хобби-->
         <scene sceneID="LIZ-JK-pT8">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="3db-IB-9oQ" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="3db-IB-9oQ" customClass="HobbiViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ciZ-a3-l2T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,16 +198,16 @@
                             <constraint firstItem="Nj4-Gq-lWm" firstAttribute="bottom" secondItem="y4s-Zw-2Le" secondAttribute="bottom" constant="50" id="xmd-DF-baO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Обо мне" id="T1G-GS-H72"/>
+                    <navigationItem key="navigationItem" title="Мое хобби" id="T1G-GS-H72"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Og6-06-vfo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2561" y="939"/>
         </scene>
-        <!--Мои увлечения-->
+        <!--Мои планы-->
         <scene sceneID="5GL-Wk-Zdi">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="4yi-KX-iiB" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="4yi-KX-iiB" customClass="BeforeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b6L-ll-fB8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,9 +216,6 @@
                                 <rect key="frame" x="20" y="434" width="280" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Далее"/>
-                                <connections>
-                                    <segue destination="2wd-EE-1MJ" kind="show" id="loo-3u-iiV"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rUG-UR-ugH"/>
@@ -229,27 +226,11 @@
                             <constraint firstItem="EkR-bg-BGX" firstAttribute="leading" secondItem="rUG-UR-ugH" secondAttribute="leading" constant="20" id="wc5-It-xEO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Мои увлечения" id="HGe-qW-4jA"/>
+                    <navigationItem key="navigationItem" title="Мои планы" id="HGe-qW-4jA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viu-zn-QIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3339" y="940"/>
-        </scene>
-        <!--Чего я хочу?-->
-        <scene sceneID="9y9-ez-vuu">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="2wd-EE-1MJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ihx-Ni-ZQL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Bpd-Fn-TSH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Чего я хочу?" id="zmn-Da-OSf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qSw-14-ZUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4104" y="940"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yWr-3y-pam">
