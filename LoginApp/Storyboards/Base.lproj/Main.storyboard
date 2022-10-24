@@ -211,20 +211,8 @@
                     <view key="view" contentMode="scaleToFill" id="b6L-ll-fB8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkR-bg-BGX">
-                                <rect key="frame" x="20" y="434" width="280" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Далее"/>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rUG-UR-ugH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="rUG-UR-ugH" firstAttribute="trailing" secondItem="EkR-bg-BGX" secondAttribute="trailing" constant="20" id="6n8-rK-ZyJ"/>
-                            <constraint firstItem="rUG-UR-ugH" firstAttribute="bottom" secondItem="EkR-bg-BGX" secondAttribute="bottom" constant="50" id="Ahi-fy-NUL"/>
-                            <constraint firstItem="EkR-bg-BGX" firstAttribute="leading" secondItem="rUG-UR-ugH" secondAttribute="leading" constant="20" id="wc5-It-xEO"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мои планы" id="HGe-qW-4jA"/>
                 </viewController>
