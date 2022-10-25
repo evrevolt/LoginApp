@@ -16,6 +16,8 @@ final class LoginViewController: UIViewController {
     private let user = someUser.login
     private let password = someUser.password
     
+    private let name = someUser.name
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -46,7 +48,7 @@ final class LoginViewController: UIViewController {
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.view.backgroundColor = .cyan
-                welcomeVC.welcomeName = user
+                welcomeVC.welcomeName = name
             } else if let navigationVC = viewController as? UINavigationController {
                 
                 //я так и не понял, почему не каститься Hobbi и Before VC
