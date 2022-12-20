@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		548C5C922906866B0003A641 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548C5C912906866B0003A641 /* InfoViewController.swift */; };
-		548C5C9429068A280003A641 /* HobbiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548C5C9329068A280003A641 /* HobbiViewController.swift */; };
-		548C5C9629068A720003A641 /* BeforeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548C5C9529068A720003A641 /* BeforeViewController.swift */; };
+		548C5C922906866B0003A641 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548C5C912906866B0003A641 /* TabBarController.swift */; };
+		548C5C9429068A280003A641 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548C5C9329068A280003A641 /* UserInfoViewController.swift */; };
+		548C5C9629068A720003A641 /* UserBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548C5C9529068A720003A641 /* UserBioViewController.swift */; };
 		549236DD290674210045B2AE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549236DC290674210045B2AE /* Person.swift */; };
 		54E534DB29041020003B174F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E534DA29041020003B174F /* AppDelegate.swift */; };
 		54E534DD29041020003B174F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E534DC29041020003B174F /* SceneDelegate.swift */; };
@@ -21,9 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		548C5C912906866B0003A641 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		548C5C9329068A280003A641 /* HobbiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiViewController.swift; sourceTree = "<group>"; };
-		548C5C9529068A720003A641 /* BeforeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeViewController.swift; sourceTree = "<group>"; };
+		548C5C912906866B0003A641 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		548C5C9329068A280003A641 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		548C5C9529068A720003A641 /* UserBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBioViewController.swift; sourceTree = "<group>"; };
 		549236DC290674210045B2AE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		54E534D729041020003B174F /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E534DA29041020003B174F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +51,10 @@
 			isa = PBXGroup;
 			children = (
 				54E534DE29041020003B174F /* LoginViewController.swift */,
+				548C5C912906866B0003A641 /* TabBarController.swift */,
 				54E534EE290413AC003B174F /* WelcomeViewController.swift */,
-				548C5C912906866B0003A641 /* InfoViewController.swift */,
-				548C5C9329068A280003A641 /* HobbiViewController.swift */,
-				548C5C9529068A720003A641 /* BeforeViewController.swift */,
+				548C5C9329068A280003A641 /* UserInfoViewController.swift */,
+				548C5C9529068A720003A641 /* UserBioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,10 +104,10 @@
 		54E534D929041020003B174F /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				549236DA290672630045B2AE /* Models */,
-				549236DB290672B10045B2AE /* SupportFiles */,
 				549236D8290671F20045B2AE /* ViewControllers */,
+				549236DA290672630045B2AE /* Models */,
 				549236D9290672360045B2AE /* Storyboards */,
+				549236DB290672B10045B2AE /* SupportFiles */,
 				54E534E329041022003B174F /* Assets.xcassets */,
 				54E534E829041022003B174F /* Info.plist */,
 			);
@@ -188,11 +188,11 @@
 				549236DD290674210045B2AE /* Person.swift in Sources */,
 				54E534DF29041020003B174F /* LoginViewController.swift in Sources */,
 				54E534EF290413AC003B174F /* WelcomeViewController.swift in Sources */,
-				548C5C922906866B0003A641 /* InfoViewController.swift in Sources */,
+				548C5C922906866B0003A641 /* TabBarController.swift in Sources */,
 				54E534DB29041020003B174F /* AppDelegate.swift in Sources */,
 				54E534DD29041020003B174F /* SceneDelegate.swift in Sources */,
-				548C5C9629068A720003A641 /* BeforeViewController.swift in Sources */,
-				548C5C9429068A280003A641 /* HobbiViewController.swift in Sources */,
+				548C5C9629068A720003A641 /* UserBioViewController.swift in Sources */,
+				548C5C9429068A280003A641 /* UserInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,40 +8,52 @@
 
 //Модель ничего не должна знать об UI
 
-class User {
-    var login: String
-    var password: String
-    
-    init(login: String, password: String) {
-        self.login = login
-        self.password = password
+struct User {
+    let login: String
+    let password: String
+    let person: Person
+
+    static func getUserData() -> User {
+        User(
+            login: "User",
+            password: "1234",
+            person: Person.getPerson()
+        )
     }
 }
 
-class Person: User {
-    var name: String = ""
-    var info: String = ""
-    var hobbi: String = ""
-    var before: String = ""
+struct Person {
+    let name: String
+    let surname: String
+    let photo: String
+    let biography: String
+    let job: Company
     
-    init (login: String,
-          password: String,
-          name: String,
-          info: String,
-          hobbi: String,
-          before: String) {
-        super.init(login: login, password: password)
-        self.name = name
-        self.info = info
-        self.hobbi = hobbi
-        self.before = before
+    var fullName: String {
+        "\(name) \(surname)"
+    }
+    
+    static func getPerson() -> Person {
+        Person(
+            name: "Gennady",
+            surname: "Vedernikov",
+            photo: "Image",
+            biography: """
+            Я родился в городе Кирове, мне 26 лет. Работал на множестве разных профессий, но большего всего понравилось программирование, им увлекался с детства. Любой к продукции компании Apple дала о себе знать, и я выбрал мобильную разработку как то, в чем хочу развиваться. Стараюсь сделать всю работу с блеском, что и отличает меня от остальных.
+            """,
+            job: Company.getCompany()
+        )
     }
 }
 
-var someUser = Person(login: "User",
-                  password: "1234",
-                  name: "Gena",
-                  info: "Я люблю спать",
-                  hobbi: "Мое хобби - спать",
-                  before: "Когда я закончу курс я хочу поспать")
-
+struct Company {
+    let title: String
+    let jobTitle: String
+    
+    static func getCompany() -> Company {
+        Company(
+            title: "Freelance",
+            jobTitle: "iOS Developer"
+        )
+    }
+}

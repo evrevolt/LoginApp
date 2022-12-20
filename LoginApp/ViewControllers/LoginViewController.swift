@@ -13,10 +13,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let user = someUser.login
-    private let password = someUser.password
-    
-    private let name = someUser.name
+    private let user = User.getUserData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,45 +21,18 @@ final class LoginViewController: UIViewController {
     
     //Передача данных по seque
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-//        welcomeVC.welcomeName = user
-        
-//
-//        guard let tabBarVC = segue.destination as? UITabBarController else { return }
-//        guard let viewControllers = tabBarVC.viewControllers else { return }
-//
-//        viewControllers.forEach { viewController in
-//            if let welcomeVC = viewController as? WelcomeViewController {
-//                welcomeVC.view.backgroundColor = .yellow
-//                welcomeVC.welcomeName = user
-//            } else if let navigationVC = viewController as? UINavigationController {
-//                guard let firstInNabigationVC = navigationVC.topViewController else { return }
-//                firstInNabigationVC.view.backgroundColor = .red
-//            }
-//        }
-//
-        
-        guard let tabBarVC = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBarVC.viewControllers else { return }
+        guard let tabBarController = segue.destination as? UITabBarController
+        else { return }
+        guard let viewControllers = tabBarController.viewControllers
+        else { return }
         
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.view.backgroundColor = .cyan
-                welcomeVC.welcomeName = name
+                welcomeVC.user = user
             } else if let navigationVC = viewController as? UINavigationController {
-                
-                //я так и не понял, почему не каститься Hobbi и Before VC
-                //Евгений пытался научить меня брекпоинтам, и как пользоваться ими я понял
-                //Но вот что смотреть в них, и почему переменные куда-то убегаеют - нет
-                navigationVC.viewControllers.forEach{ viewController in
-                    if let infoVC = viewController as? InfoViewController {
-                        infoVC.view.backgroundColor = .red
-                    } else if let hobbiVC = viewController as? HobbiViewController {
-                        hobbiVC.view.backgroundColor = .green
-                    } else if let beforeVC = viewController as? BeforeViewController {
-                        beforeVC.view.backgroundColor = .blue
-                    }
-                }
+                guard let userInfoVC = navigationVC.topViewController as? UserInfoViewController
+                else { return }
+                userInfoVC.user = user
             }
         }
     }
@@ -75,8 +45,8 @@ final class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped() {
         //Проверка имени и пароля
-        guard userNameTextField.text == user,
-        passwordTextField.text == password else {
+        guard userNameTextField.text == user.login,
+              passwordTextField.text == user.password else {
             showAlert(with: "Неверно!", and: "Неверное имя или пароль")
             passwordTextField.text = ""
             return
@@ -84,11 +54,11 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameBtnTapped() {
-        showAlert(with: "Подскажу Ваше имя \u{1F60F}", and: "Вас зовут - \(user)")
+        showAlert(with: "Подскажу Ваше имя \u{1F60F}", and: "Вас зовут - \(user.login)")
     }
 
     @IBAction func forgotPasswordBtnTapped() {
-        showAlert(with: "Ох уж эти пароли \u{1F605}", and: "Ваш пароль - \(password)")
+        showAlert(with: "Ох уж эти пароли \u{1F605}", and: "Ваш пароль - \(user.password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
